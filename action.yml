@@ -1,0 +1,29 @@
+name: "GitOps Framework 1.0 Helm Value Update workflow action"
+description: "GitOps Model Value Updates based on the dispatching request and repository dispatching events"
+inputs:
+  bot_name:
+    description: "GitHub auto commit username"
+    required: true
+  helm_variable:
+    description: "Helm Value Variable which should be updated"
+    required: true
+  helm_new_value:
+    description: "Helm New value which should be updated"
+    required: true
+  helm_value_file_path: 
+    description: "Actual Path of the Helm Value file"
+    required: true
+  helm_value_file_name:
+    description: "Helm Value File name"
+    required: true
+  version:
+    description: "We use yq and this is the yq version"
+    required: true
+    default: v4.30.5
+runs:
+  using: composite
+  steps:
+    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+      shell: bash
+    - run: execute_action.sh ${{ inputs.bot_name }} ${{ inputs.helm_variable }} ${{ inputs.helm_new_value }} ${{ inputs.helm_value_file_path }} ${{ inputs.helm_value_file_name }} ${{ inputs.version }}
+      shell: bash

@@ -1,1 +1,1 @@
-# githops-helm-value-update
+# GitOps Helm Value Update
