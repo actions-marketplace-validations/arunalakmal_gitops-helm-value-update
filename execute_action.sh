@@ -16,6 +16,7 @@ function update_helm_value {
     pushd ${HELM_VALUE_FILE_PATH}
     yq -i ".$HELM_VARIABLE = \"$HELM_VALUE\"" ${HELM_VALUE_FILE_NAME}
     popd
+    rm -rf {install-man-page.sh,yq,yq.1,yq_linux_amd64.tar.gz}
     git add .
     git commit -m "Helm values updated with the new value ${HELM_VALUE}"
     git push
