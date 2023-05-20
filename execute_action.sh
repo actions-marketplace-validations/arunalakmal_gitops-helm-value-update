@@ -14,7 +14,7 @@ function update_helm_value {
     git config --global user.email "${BOT_NAME}@email.com"
     git pull
     pushd ${HELM_VALUE_FILE_PATH}
-    yq -i '.${HELM_VARIABLE} = "${HELM_VALUE}"' ${HELM_VALUE_FILE_NAME}
+    yq -i .${HELM_VARIABLE} = "${HELM_VALUE}" ${HELM_VALUE_FILE_NAME}
     popd
     git add .
     git commit -m "Helm values updated with the new value ${HELM_VALUE}"
