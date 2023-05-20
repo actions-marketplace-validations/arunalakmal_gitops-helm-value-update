@@ -51,7 +51,7 @@ function setup_yq {
     curl -sLO "https://github.com/mikefarah/yq/releases/download/${VERSION}/yq_${OPSYS}_${ARCH}.tar.gz"
     tar zxf ./yq_${OPSYS}_${ARCH}.tar.gz
     mv yq_${OPSYS}_${ARCH} yq
-    $(pwd)/yq --version 
+    #$(pwd)/yq --version 
 }
 
 if test "$#" -ne 6; then
@@ -63,6 +63,5 @@ fi
 #     echo "yq already installed"
 #     update_helm_value
 # else
-    echo "yq not installed"
-    setup_yq && update_helm_value
+setup_yq && update_helm_value
 # fi
