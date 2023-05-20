@@ -58,10 +58,10 @@ if test "$#" -ne 6; then
     echo "Please refer https://github.com/arunalakmal/gitops-helm-value-update#readme for more information."
     exit 1
 elif [[ $(pwd)/yq  ]]; then
-    echo "kustomize already installed"
+    echo "yq already installed"
     update_helm_value
 else
-    echo "kustomize not installed"
+    echo "yq not installed"
     setup_yq
     update_helm_value
 fi
