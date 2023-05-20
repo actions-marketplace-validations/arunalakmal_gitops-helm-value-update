@@ -7,7 +7,7 @@ inputs:
   helm_variable:
     description: "Helm Value Variable which should be updated"
     required: true
-  helm_new_value:
+  helm_value:
     description: "Helm New value which should be updated"
     required: true
   helm_value_file_path: 
@@ -25,5 +25,5 @@ runs:
   steps:
     - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash
-    - run: execute_action.sh ${{ inputs.bot_name }} ${{ inputs.helm_variable }} ${{ inputs.helm_new_value }} ${{ inputs.helm_value_file_path }} ${{ inputs.helm_value_file_name }} ${{ inputs.version }}
+    - run: execute_action.sh ${{ inputs.bot_name }} ${{ inputs.helm_variable }} ${{ inputs.helm_value }} ${{ inputs.helm_value_file_path }} ${{ inputs.helm_value_file_name }} ${{ inputs.version }}
       shell: bash
