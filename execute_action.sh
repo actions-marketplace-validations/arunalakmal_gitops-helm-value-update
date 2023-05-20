@@ -14,7 +14,7 @@ function update_helm_value {
     git config --global user.email "${BOT_NAME}@email.com"
     git pull
     pushd ${HELM_VALUE_FILE_PATH}
-    yq -i .${HELM_VARIABLE} = "${HELM_VALUE}" ${HELM_VALUE_FILE_NAME}
+    yq -i ".$HELM_VARIABLE = \"$HELM_VALUE\"" ${HELM_VALUE_FILE_NAME}
     popd
     git add .
     git commit -m "Helm values updated with the new value ${HELM_VALUE}"
@@ -49,7 +49,7 @@ function setup_yq {
 
     curl -sLO "https://github.com/mikefarah/yq/releases/download/${VERSION}/yq_${OPSYS}_${ARCH}.tar.gz"
     tar zxf ./yq_${OPSYS}_${ARCH}.tar.gz
-    mv yq_linux_amd64 yq
+    mv yq_${OPSYS}_${ARCH} yq
     $(pwd)/yq --version 
 }
 
@@ -57,11 +57,11 @@ if test "$#" -ne 6; then
     echo "Invalid number of Arguments, plesase specify the correct number of arguments"
     echo "Please refer https://github.com/arunalakmal/gitops-helm-value-update#readme for more information."
     exit 1
-elif [[ $(pwd)/yq  ]]; then
-    echo "yq already installed"
-    update_helm_value
-else
-    echo "yq not installed"
-    setup_yq
-    update_helm_value
 fi
+# elif [[ $(pwd)/yq  ]]; then
+#     echo "yq already installed"
+#     update_helm_value
+# else
+    echo "yq not installed"
+    setup_yq && update_helm_value
+# fi
