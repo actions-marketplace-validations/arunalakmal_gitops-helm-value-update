@@ -9,7 +9,7 @@ Use the action as below and find the explation of the options.
 - **bot_name :** Name of the Git commiter account.
 - **helm_variable :** Respective `Helm Key` following the single line format, separating nested option in a `.`
 - **helm_value :** Respective actual value `Helm Value` of the above key. This is the value being updated in this action.
-- **helm_value_file_path :** Path of the value file, this doesn't contain file (Ex: if value file is located in `folder1/folder2/value-file.yaml` , value for this option should be `helm_value_file_path`)
+- **helm_value_file_path :** Path of the value file, this doesn't contain file (Ex: if value file is located in `folder1/folder2/value-file.yaml` , value for this option should be `folder1/folder2`)
 - **helm_value_file_name :** Value file name (Ex: above file path value should be `value-file.yaml`)
 - **version :** Optional value, this is the `yq` version default is `v4.30.5`
 
