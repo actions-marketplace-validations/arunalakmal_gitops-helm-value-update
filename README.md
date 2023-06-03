@@ -14,7 +14,7 @@ Use the action as below and find the explation of the options.
 - **version :** Optional value, this is the `yq` version default is `v4.30.5`
 
 ```
-- name: Test workflow deployment for airflow component
+name: Test workflow deployment for airflow component
 uses: arunalakmal/gitops-helm-value-update@main
 with:
     bot_name: "GitOpsDeployer"
