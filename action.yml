@@ -1,5 +1,9 @@
 name: "GitOps Framework 1.0 Helm Value Update workflow action"
 description: "GitOps Model Value Updates based on the dispatching request and repository dispatching events"
+author: 'Aruna Fernando'
+branding:
+  icon: 'git-commit'
+  color: 'blue'
 inputs:
   bot_name:
     description: "GitHub auto commit username"
