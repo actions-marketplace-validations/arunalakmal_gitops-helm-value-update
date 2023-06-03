@@ -1,4 +1,4 @@
-name: "GitOps Framework 1.0 Helm Value Update workflow action"
+name: "Helm Value Update workflow action"
 description: "GitOps Model Value Updates based on the dispatching request and repository dispatching events"
 author: 'Aruna Fernando'
 branding:
