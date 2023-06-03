@@ -59,9 +59,5 @@ if test "$#" -ne 6; then
     echo "Please refer https://github.com/arunalakmal/gitops-helm-value-update#readme for more information."
     exit 1
 fi
-# elif [[ $(pwd)/yq  ]]; then
-#     echo "yq already installed"
-#     update_helm_value
-# else
+
 setup_yq && update_helm_value
-# fi
