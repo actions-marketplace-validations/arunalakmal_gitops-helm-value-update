@@ -23,3 +23,5 @@ with:
     helm_value_file_path: "envs/test"
     helm_value_file_name: "values-test.yaml"
 ```
+
+> **Note:** You can repeat the same steps to multiple values, there will be a commit for each and every value to make it easier to identify in the commits. 
